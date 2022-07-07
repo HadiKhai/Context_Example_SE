@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Navbar from "./Navbar";
+import CounterProvider from "./context/ counter";
+import ThemeProvider from "./context/theme";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider>
+          <CounterProvider>
+              <Navbar />
+              <App />
+          </CounterProvider>
+      </ThemeProvider>
+
   </React.StrictMode>
 );
 
